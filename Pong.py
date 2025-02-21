@@ -85,10 +85,6 @@ pygame.display.set_caption('Pong')
 FPS = 60
 fpsClock = pygame.time.Clock()
 
-ball = pygame.image.load('Ball.png')
-leftpaddle = pygame.image.load('left.png')
-rightpaddle = pygame.image.load('right.png')
-
 paddle_height = 55
 paddle_width = 41
 ballsize = 19
