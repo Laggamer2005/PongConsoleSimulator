@@ -2,12 +2,12 @@ import sys
 import os
 import pygame.freetype
 import pygame
-import random
 import heapq
 import ctypes
 import math
 import time
 from pygame.locals import *
+import secrets
 
 
 def left_score():
@@ -426,7 +426,7 @@ def intro(yspeed):
             block.x += 3
     if (blockList[0][1].y + 110 == height and not introMovingUp) or \
             (blockList[0][1].y == 60 and introMovingUp):
-        introMovingUp = bool(random.getrandbits(1))
+        introMovingUp = bool(secrets.SystemRandom().getrandbits(1))
     screen.blit(score_screen, (0, 140))
     draw_net()
 
@@ -663,7 +663,7 @@ for i in range(14):
     blocks.clear()
 
 make_score()
-dirchoice = random.choice([0, 1])
+dirchoice = secrets.choice([0, 1])
 if dirchoice == 0:
     leftMoving = True
 else:
@@ -682,8 +682,8 @@ while True:
             intro_sound.play()
             introTimer = time.time()
         if not chosen:
-            FPS = random.choice([60, 90, 120, 150])
-            yspeed = random.choice([1, 2, 5, 10])
+            FPS = secrets.choice([60, 90, 120, 150])
+            yspeed = secrets.choice([1, 2, 5, 10])
             chosen = True
         else:
             intro(yspeed)
@@ -792,19 +792,19 @@ while True:
         if not ballMoving and ballTimer >= 2:
             ballMoving = True
             ball.x = ballx
-            ball.y = random.randint(66, height-84)
+            ball.y = secrets.SystemRandom().randint(66, height-84)
             if dirchoice == 0:
-                quadrant = random.choice([2, 3])
+                quadrant = secrets.choice([2, 3])
                 if quadrant == 2:
-                    direction = random.randint(125, 180)
+                    direction = secrets.SystemRandom().randint(125, 180)
                 else:
-                    direction = random.randint(186, 225)
+                    direction = secrets.SystemRandom().randint(186, 225)
             else:
-                quadrant = random.choice([1, 4])
+                quadrant = secrets.choice([1, 4])
                 if quadrant == 1:
-                    direction = random.randint(0, 45)
+                    direction = secrets.SystemRandom().randint(0, 45)
                 else:
-                    direction = random.randint(315, 354)
+                    direction = secrets.SystemRandom().randint(315, 354)
             vx = ball_speed
             if dirchoice == 0:
                 vx *= -1

@@ -2,11 +2,11 @@ import sys
 import os
 import pygame.freetype
 import pygame
-import random
 import ctypes
 import math
 import time
 from pygame.locals import *
+import secrets
 
 
 def left_score():
@@ -196,7 +196,7 @@ def new_game(type):
     if type == 0:
         gameStarted = False
     else:
-        dirchoice = random.choice([0, 1])
+        dirchoice = secrets.choice([0, 1])
         if dirchoice == 0:
             leftMoving = True
         else:
@@ -368,7 +368,7 @@ gameStarted = True
 ballSpawning = False
 
 make_score()
-dirchoice = random.choice([0, 1])
+dirchoice = secrets.choice([0, 1])
 if dirchoice == 0:
     leftMoving = True
 else:
@@ -467,21 +467,21 @@ while True:
                     rightMovingDown = True
     if not ballMoving and ballTimer >= 1:
         ballMoving = True
-        ball.centery = random.randint(66, height-120)
+        ball.centery = secrets.SystemRandom().randint(66, height-120)
         if dirchoice == 0:
             ball.centerx = width - 35
-            quadrant = random.choice([2, 3])
+            quadrant = secrets.choice([2, 3])
             if quadrant == 2:
-                direction = random.randint(125, 180)
+                direction = secrets.SystemRandom().randint(125, 180)
             else:
-                direction = random.randint(186, 225)
+                direction = secrets.SystemRandom().randint(186, 225)
         else:
             ball.centerx = 35
-            quadrant = random.choice([1, 4])
+            quadrant = secrets.choice([1, 4])
             if quadrant == 1:
-                direction = random.randint(0, 45)
+                direction = secrets.SystemRandom().randint(0, 45)
             else:
-                direction = random.randint(315, 354)
+                direction = secrets.SystemRandom().randint(315, 354)
         if diff == 3:
             vx = 36.0
         else:

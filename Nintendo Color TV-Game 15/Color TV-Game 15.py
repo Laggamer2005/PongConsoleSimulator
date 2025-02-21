@@ -2,11 +2,11 @@ import sys
 import os
 import pygame.freetype
 import pygame
-import random
 import ctypes
 import math
 import time
 from pygame.locals import *
+import secrets
 
 
 def left_score():
@@ -58,9 +58,9 @@ def paddle_collision(ball, paddle, color):
         else:
             ball.left = paddle.right
             if direction == 0:
-                direction = random.choice([direction - 45, direction, direction + 45])
+                direction = secrets.choice([direction - 45, direction, direction + 45])
             else:
-                direction = random.choice([direction, 0])
+                direction = secrets.choice([direction, 0])
         leftMoving = False
         pygame.mouse.set_pos([width / 2, right_paddle.y])
         if paddle != left_paddle and paddle != left_paddle2:
@@ -78,9 +78,9 @@ def paddle_collision(ball, paddle, color):
         else:
             ball.right = paddle.left
             if direction == 180:
-                direction = random.choice([direction - 45, direction, direction + 45])
+                direction = secrets.choice([direction - 45, direction, direction + 45])
             else:
-                direction = random.choice([direction, 180])
+                direction = secrets.choice([direction, 180])
         leftMoving = True
         pygame.mouse.set_pos([width / 2, left_paddle.y])
         if paddle != right_paddle and paddle != right_paddle2:
@@ -125,7 +125,7 @@ def ball_movement(ball):
                                 ball.top = net[i][j].bottom
         elif game == 6 and 635 <= ball.centerx <= 645:
             wall_hit_sound.play()
-            bounce = random.random()
+            bounce = secrets.SystemRandom().random()
             if bounce > 0.9:
                 vy *= 1
             else:
@@ -339,7 +339,7 @@ def new_game(type):
         gameStarted, ball, ballTimer, ballMoving, dirchoice, leftMoving
     if type == 0:
         gameStarted = False
-    dirchoice = random.choice([0, 1])
+    dirchoice = secrets.choice([0, 1])
     if dirchoice == 0:
         leftMoving = True
     else:
@@ -628,7 +628,7 @@ hockeynet = False
 shootingBlink = False
 
 make_score()
-dirchoice = random.choice([0, 1])
+dirchoice = secrets.choice([0, 1])
 if dirchoice == 0:
     leftMoving = True
 else:
@@ -810,21 +810,21 @@ while True:
                         rightMovingDown = True
         if not ballMoving and ballTimer >= (130/60) and game != 8:
             ballMoving = True
-            ball.y = random.randint(66, height-84)
+            ball.y = secrets.SystemRandom().randint(66, height-84)
             if dirchoice == 0:
                 ball.x = rightx
-                quadrant = random.choice([2, 3])
+                quadrant = secrets.choice([2, 3])
                 if quadrant == 2:
-                    direction = random.randint(125, 180)
+                    direction = secrets.SystemRandom().randint(125, 180)
                 else:
-                    direction = random.randint(186, 225)
+                    direction = secrets.SystemRandom().randint(186, 225)
             else:
                 ball.x = leftx
-                quadrant = random.choice([1, 4])
+                quadrant = secrets.choice([1, 4])
                 if quadrant == 1:
-                    direction = random.randint(0, 45)
+                    direction = secrets.SystemRandom().randint(0, 45)
                 else:
-                    direction = random.randint(315, 354)
+                    direction = secrets.SystemRandom().randint(315, 354)
             vx = ball_speed
             if dirchoice == 0:
                 vx *= -1
