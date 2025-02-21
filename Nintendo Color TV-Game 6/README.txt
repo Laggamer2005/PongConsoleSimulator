@@ -20,7 +20,6 @@ Controls:
 
 <NUM3> - Switch to Game 3
 
-
 Mouse controls:
 Only one player is in control of his paddle at a time.
 The player towards whom the ball is coming is in control.
@@ -37,7 +36,7 @@ How to play:
 Use the Numkeys to select a game mode. The game mode can only be selected when 
 a game is started. You can also change the size of the left paddle from long to short or vice versa
 using the key <1> or the size of the right paddle using the key <2>. By default, the size of both
-paddles is long. Using the key <3> you can also change switch between the slow and fast speeds of the
+paddles is long. Using the key <3> you can also switch between the slow and fast speeds of the
 ball. By default, the speed of the ball is slow. The key <4> switches between Singles and Doubles
 variants in each of the game modes, Singles is the default setting.
 
@@ -65,6 +64,6 @@ in Game 1. The game ends when one player scores 15 points. You can start a new g
 Game 3 - Hockey (Singles/Doubles):
 This game has exactly the same rules as Tennis, but this time, there are also walls on the sides of the
 screen, which the ball can bounce off of. The Doubles variation is also different from the previous
-two games. This time, each player controls one paddle on his side of the screen and one paddle on the 
+two games. In this game, each player controls one paddle on his side of the screen and one paddle on the 
 opponent's side of the screen. The game ends when one player scores 15 points. You can start a new 
 game by pressing <Space>.
