@@ -1,10 +1,8 @@
-Controls:
-
 <Esc> - Quit game
 
 <Space> - Start game / Reset game
 
-<LShift> - switch controls between Mouse and Keyboard (default setting is Mouse)
+<Shift> - switch controls between Mouse and Keyboard (default setting is Mouse)
 
 Mouse controls:
 Only one player is in control of his paddle at a time.
