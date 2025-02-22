@@ -1,12 +1,12 @@
 import sys
 import pygame
-import random
 import math
 from pygame.locals import *
+import secrets
 
 
 def start():
-    angle = random.randrange(0, 360)
+    angle = secrets.SystemRandom().randrange(0, 360)
     dir = math.radians(angle)
     return dir
 
